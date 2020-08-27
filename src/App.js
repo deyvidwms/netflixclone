@@ -54,18 +54,22 @@ export default () => {
 
       <Header black={blackHeader} />
 
-      { featuredData && 
-        <FeatureMovie item={featuredData} />
-      }
+        { featuredData && 
+          <FeatureMovie item={featuredData} />
+        }
 
-      <section className="lists">
-        {movieList.map( (item, key) => (
-          <MovieRow key={key} title={item.title} items={item.items} />
-        ) )}
-      </section>
-    
+        <section className="lists">
+          {movieList.map( (item, key) => (
+            <MovieRow key={key} title={item.title} items={item.items} />
+          ) )}
+        </section>
+      
       <Footer />
       
+      { movieList.length <= 0 && 
+        <Loading />
+      }
+
     </div>
   );
 }
