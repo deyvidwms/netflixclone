@@ -2,10 +2,10 @@ import React from 'react';
 import './MovieRow.css';
 
 
-export default () => {
+export default ({title, items}) => {
     return (
         <div>
-            Lista do Filme
+            <h2>{title}</h2>
         </div>
     );
 }
